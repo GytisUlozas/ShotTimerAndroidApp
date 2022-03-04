@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:DryFireTimer.Models"
+             x:Class="DryFireTimer.Pages.MainPage">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="Medium" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ScrollView>
+    <StackLayout Padding="15,0">
+        
+        <Frame Padding="10,5" OutlineColor="DarkGray" BackgroundColor="#292828" Margin="0,10,0,0">
+            <Label x:Name="ExerciseNameLabel" FontSize="Title" TextColor="White"></Label>
+        </Frame>
+
+        <StackLayout Orientation="Horizontal">
+            <Button FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf044;" Clicked="OnEditButtonClick" HorizontalOptions="StartAndExpand"></Button>
+            <Button FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf137;" Clicked="OnPrevButtonClick"></Button>
+            <Button FontFamily="{StaticResource FontAwesomeSolid}" Text="&#xf138;" Clicked="OnNextButtonClick"></Button>
+        </StackLayout>
+
+        <Frame Padding="10,0">
+            <StackLayout >
+                <Label x:Name="ExerciseTimeLabel"></Label>
+                <Label x:Name="BreakTimeLabel"></Label>
+                <Label x:Name="NumberOfRepsLabel"></Label>
+                <Label x:Name="TotalTimeLabel"></Label>
+            </StackLayout>
+        </Frame>
+        
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <Label x:Name="UiClock" FontSize="60" HorizontalTextAlignment="Center"></Label>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Button x:Name="StartButton" Margin="20,0" CornerRadius="5" Clicked="OnStartButtonClick" ></Button>
+                <Button BackgroundColor="IndianRed" Text="Reset" CornerRadius="5" Clicked="OnResetButtonClick"></Button>
+            </StackLayout>
+        </StackLayout>
+        <Frame Padding="10" OutlineColor="DarkGray">
+            <Label x:Name="DescriptionLabel"></Label>
+        </Frame>
+        <Frame VerticalOptions="End" HeightRequest="50" WidthRequest="320" BackgroundColor="White" Padding="5" Margin="0,0,0,10">
+            <local:AdBanner></local:AdBanner>
+        </Frame>
+    </StackLayout>
+    </ScrollView>
+
+</ContentPage>

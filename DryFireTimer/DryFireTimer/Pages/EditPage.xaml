@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DryFireTimer.Models"
+             x:Class="DryFireTimer.Pages.EditPage">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="Medium" />
+            </Style>
+            <Style TargetType="Entry">
+                <Setter Property="FontSize" Value="Medium" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <StackLayout Padding="15,0">
+            <Frame Padding="10,5" OutlineColor="DarkGray" Margin="0,10,0,0">
+                <StackLayout>
+                    <Label x:Name="ExerciseNameLabel"></Label>
+                    <Entry x:Name="ExerciseNameEntry" FontSize="Title"></Entry>
+                </StackLayout>
+            </Frame>
+
+            <Frame OutlineColor="DarkGray" Padding="10,0">
+                <StackLayout >
+                    <Label x:Name="ExerciseTimeLabel"></Label>
+                    <Entry x:Name="ExerciseTimeEntry" Keyboard="Numeric"></Entry>
+
+                    <Label x:Name="BreakTimeLabel"></Label>
+                    <Entry x:Name="BreakTimeEntry" Keyboard="Numeric"></Entry>
+
+                    <Label x:Name="NumberOfRepsLabel"></Label>
+                    <Entry x:Name="NumberOfRepsEntry" Keyboard="Numeric"></Entry>
+                    
+                    <Label x:Name="DescriptionLabel"></Label>
+                    <Editor x:Name="DescriptionEntry" FontSize="Medium" AutoSize="TextChanges"></Editor>
+                </StackLayout>
+            </Frame>
+            
+            <StackLayout Orientation="Horizontal" Padding="0,20">
+                <Button x:Name="DeleteButton" Text="Delete" Clicked="OnDeleteButtonClick" HorizontalOptions="Start" VerticalOptions="CenterAndExpand"></Button>
+                <Button Text="Back" Clicked="OnReturnButtonClick" HorizontalOptions="CenterAndExpand"></Button>    
+                <Button Text="Save" Clicked="OnSaveButtonClick" HorizontalOptions="End"></Button>
+            </StackLayout>
+            
+            <Frame VerticalOptions="End" HeightRequest="50" WidthRequest="320" BackgroundColor="White" Padding="5" Margin="0,0,0,10">
+                <local:AdBanner></local:AdBanner>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
